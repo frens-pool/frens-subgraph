@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "PoolFactory": {
+      "address": "0x7702372f8DB89afd4A619f94F43d398d6E06d961",
+      "startBlock": 8474168
+    }
+  }
+}

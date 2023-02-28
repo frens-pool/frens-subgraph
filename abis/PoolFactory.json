@@ -1,0 +1,55 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "contract IFrensStorage",
+        "name": "_frensStorage",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "contractAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "creator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "Create",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "owner_", "type": "address" },
+      { "internalType": "bool", "name": "validatorLocked", "type": "bool" }
+    ],
+    "name": "create",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "version",
+    "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
