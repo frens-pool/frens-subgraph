@@ -7,3 +7,13 @@ type Create @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type DepositToPool @entity(immutable: true) {
+  id: Bytes!
+  amount: BigInt! # uint256
+  depositer: Bytes! # address
+  StakingPool_id: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

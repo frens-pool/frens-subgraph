@@ -8,9 +8,9 @@ import {
 } from "matchstick-as/assembly/index"
 import { Address } from "@graphprotocol/graph-ts"
 import { Create } from "../generated/schema"
-import { Create as CreateEvent } from "../generated/PoolFactory/PoolFactory"
-import { handleCreate } from "../src/pool-factory"
-import { createCreateEvent } from "./pool-factory-utils"
+import { Create as CreateEvent } from "../generated/StakingPoolFactory/StakingPoolFactory"
+import { handleCreate } from "../src/staking-pool-factory"
+import { createCreateEvent } from "./staking-pool-factory-utils"
 
 // Tests structure (matchstick-as >=0.5.0)
 // https://thegraph.com/docs/en/developer/matchstick/#tests-structure-0-5-0

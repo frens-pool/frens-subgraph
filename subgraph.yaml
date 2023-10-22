@@ -3,12 +3,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: PoolFactory
+    name: StakingPoolFactory
     network: goerli
     source:
-      address: "0x7702372f8DB89afd4A619f94F43d398d6E06d961"
-      abi: PoolFactory
-      startBlock: 8474168
+      address: "0x40a039fCB61b935E6560dD9055D549d4624eB7cA"
+      abi: StakingPoolFactory
+      startBlock: 9105170
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -16,9 +16,28 @@ dataSources:
       entities:
         - Create
       abis:
-        - name: PoolFactory
-          file: ./abis/PoolFactory.json
+        - name: StakingPoolFactory
+          file: ./abis/StakingPoolFactory.json
       eventHandlers:
         - event: Create(indexed address,address,address)
           handler: handleCreate
-      file: ./src/pool-factory.ts
+      file: ./src/staking-pool-factory.ts
+templates:
+  - kind: ethereum
+    name: StakingPool
+    network: goerli
+    source:
+      abi: StakingPool
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - DepositToPool
+      abis:
+        - name: StakingPool
+          file: ./abis/StakingPool.json
+      eventHandlers:
+        - event: DepositToPool(uint256,address,uint256)
+          handler: handleDepositToPool
+      file: ./src/staking-pool.ts

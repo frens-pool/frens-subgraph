@@ -1,6 +1,6 @@
 import { newMockEvent } from "matchstick-as"
 import { ethereum, Address } from "@graphprotocol/graph-ts"
-import { Create } from "../generated/PoolFactory/PoolFactory"
+import { Create } from "../generated/StakingPoolFactory/StakingPoolFactory"
 
 export function createCreateEvent(
   contractAddress: Address,
