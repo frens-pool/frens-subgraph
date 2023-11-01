@@ -1,3 +1,4 @@
+import { DataSourceContext } from "@graphprotocol/graph-ts";
 import { Create as CreateEvent } from "../generated/StakingPoolFactory/StakingPoolFactory";
 import { Create } from "../generated/schema";
 import { StakingPool as StakingPoolTemplate } from "../generated/templates";
@@ -16,5 +17,9 @@ export function handleCreate(event: CreateEvent): void {
 
   entity.save();
 
-  StakingPoolTemplate.create(event.params.contractAddress);
+  let context = new DataSourceContext();
+  context.setBytes("poolAddress", event.params.contractAddress);
+  StakingPoolTemplate.createWithContext(event.params.contractAddress, context);
+
+  // StakingPoolTemplate.create(event.params.contractAddress);
 }

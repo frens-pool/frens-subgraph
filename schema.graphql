@@ -12,7 +12,8 @@ type DepositToPool @entity(immutable: true) {
   id: Bytes!
   amount: BigInt! # uint256
   depositer: Bytes! # address
-  StakingPool_id: BigInt! # uint256
+  nftId: BigInt! # uint256
+  poolAddress: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
