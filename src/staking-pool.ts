@@ -17,7 +17,6 @@ export function handleDepositToPool(event: DepositToPoolEvent): void {
   deposit.blockNumber = event.block.number;
   deposit.blockTimestamp = event.block.timestamp;
   deposit.transactionHash = event.transaction.hash;
-
   deposit.save();
 
   let pool = Create.load(poolId);
@@ -25,4 +24,5 @@ export function handleDepositToPool(event: DepositToPoolEvent): void {
     pool = new Create(poolId);
   }
   pool.deposits = depositId;
+  pool.save();
 }

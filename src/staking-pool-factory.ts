@@ -20,6 +20,4 @@ export function handleCreate(event: CreateEvent): void {
   context.setBytes("poolAddress", event.params.contractAddress);
   context.setBytes("poolId", pool.id);
   StakingPoolTemplate.createWithContext(event.params.contractAddress, context);
-
-  // StakingPoolTemplate.create(event.params.contractAddress);
 }
