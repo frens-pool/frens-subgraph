@@ -10,6 +10,7 @@ type Create @entity(immutable: true) {
 
 type DepositToPool @entity(immutable: true) {
   id: Bytes!
+  pool: Create!
   amount: BigInt! # uint256
   depositer: Bytes! # address
   nftId: BigInt! # uint256

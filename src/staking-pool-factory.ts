@@ -4,21 +4,21 @@ import { Create } from "../generated/schema";
 import { StakingPool as StakingPoolTemplate } from "../generated/templates";
 
 export function handleCreate(event: CreateEvent): void {
-  let entity = new Create(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  );
-  entity.contractAddress = event.params.contractAddress;
-  entity.creator = event.params.creator;
-  entity.owner = event.params.owner;
+  let id = event.transaction.hash.concatI32(event.logIndex.toI32());
+  let pool = new Create(id);
 
-  entity.blockNumber = event.block.number;
-  entity.blockTimestamp = event.block.timestamp;
-  entity.transactionHash = event.transaction.hash;
+  pool.contractAddress = event.params.contractAddress;
+  pool.creator = event.params.creator;
+  pool.owner = event.params.owner;
+  pool.blockNumber = event.block.number;
+  pool.blockTimestamp = event.block.timestamp;
+  pool.transactionHash = event.transaction.hash;
 
-  entity.save();
+  pool.save();
 
   let context = new DataSourceContext();
   context.setBytes("poolAddress", event.params.contractAddress);
+  context.setBytes("poolId", pool.id);
   StakingPoolTemplate.createWithContext(event.params.contractAddress, context);
 
   // StakingPoolTemplate.create(event.params.contractAddress);
