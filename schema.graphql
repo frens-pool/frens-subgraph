@@ -1,5 +1,6 @@
-type Create @entity(immutable: true) {
+type Create @entity {
   id: Bytes!
+  deposits: DepositToPool
   contractAddress: Bytes! # address
   creator: Bytes! # address
   owner: Bytes! # address
