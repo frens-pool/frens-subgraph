@@ -19,10 +19,10 @@ export function handleDepositToPool(event: DepositToPoolEvent): void {
   deposit.transactionHash = event.transaction.hash;
   deposit.save();
 
-  let pool = Create.load(poolId);
-  if (pool == null) {
-    pool = new Create(poolId);
-  }
-  pool.deposits = depositId;
-  pool.save();
+  // let pool = Create.load(poolId);
+  // if (pool == null) {
+  //   pool = new Create(poolId);
+  // }
+  // pool.deposits = depositId;
+  // pool.save();
 }

@@ -1,6 +1,6 @@
 type Create @entity {
   id: Bytes!
-  deposits: DepositToPool
+  deposits: [DepositToPool!]! @derivedFrom(field: "pool")
   contractAddress: Bytes! # address
   creator: Bytes! # address
   owner: Bytes! # address
@@ -9,7 +9,7 @@ type Create @entity {
   transactionHash: Bytes!
 }
 
-type DepositToPool @entity(immutable: true) {
+type DepositToPool @entity {
   id: Bytes!
   pool: Create!
   amount: BigInt! # uint256
