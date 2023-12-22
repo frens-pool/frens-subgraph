@@ -6,9 +6,9 @@ dataSources:
     name: StakingPoolFactory
     network: goerli
     source:
-      address: "0x40a039fCB61b935E6560dD9055D549d4624eB7cA"
+      address: "0x6Ecde9196c661b9CBb70bAC683C4e7a4Db7e85A5"
       abi: StakingPoolFactory
-      startBlock: 9105170
+      startBlock: 10254563
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
