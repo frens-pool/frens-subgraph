@@ -1,8 +1,8 @@
 {
   "goerli": {
     "StakingPoolFactory": {
-      "address": "0xbFfC9A9cf543f5b19e7f4Aa3C69d4233Ae2d45e6",
-      "startBlock": 10365035
+      "address": "0x67999A883f1693EeeA24aa911c0AfC44d42FD71E",
+      "startBlock": 10397228
     }
   }
 }
