@@ -1,7 +1,19 @@
 {
+  "mainnet": {
+    "StakingPoolFactory": {
+      "address": "0xD663a943fFaF0e1765875E06dE1B1350cEC7742D",
+      "startBlock": 19244955
+    }
+  },
+  "holesky": {
+    "StakingPoolFactory": {
+      "address": "0xfeF871dA4272E085d2eCe287e09499be291570EF",
+      "startBlock": 959723
+    }
+  },
   "goerli": {
     "StakingPoolFactory": {
-      "address": "0x67999A883f1693EeeA24aa911c0AfC44d42FD71E",
+      "address": "0x2cF36C2537a27FaB894D6eb3C243635b64Dd5136",
       "startBlock": 10397228
     }
   }
