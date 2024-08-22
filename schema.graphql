@@ -7,6 +7,7 @@ type Create @entity {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  staked: Boolean
 }
 
 type DepositToPool @entity {

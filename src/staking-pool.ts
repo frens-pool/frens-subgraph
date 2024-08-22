@@ -1,5 +1,6 @@
 import { dataSource } from "@graphprotocol/graph-ts";
 import { DepositToPool as DepositToPoolEvent } from "../generated/templates/StakingPool/StakingPool";
+import { Stake as StakeEvent } from "../generated/templates/StakingPool/StakingPool";
 import { DepositToPool, Create } from "../generated/schema";
 
 export function handleDepositToPool(event: DepositToPoolEvent): void {
@@ -25,4 +26,16 @@ export function handleDepositToPool(event: DepositToPoolEvent): void {
   // }
   // pool.deposits = depositId;
   // pool.save();
+}
+
+export function handleStake(event: StakeEvent): void {
+  let context = dataSource.context();
+  let poolAddress = context.getBytes("poolAddress");
+  let poolId = context.getBytes("poolId");
+  let pool = Create.load(poolId);
+  if (pool == null) {
+    pool = new Create(poolId);
+  }
+  pool.staked = true;
+  pool.save();
 }

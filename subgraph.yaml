@@ -4,11 +4,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: StakingPoolFactory
-    network: mainnet
+    network: holesky
     source:
-      address: "0xD663a943fFaF0e1765875E06dE1B1350cEC7742D"
+      address: "0xfeF871dA4272E085d2eCe287e09499be291570EF"
       abi: StakingPoolFactory
-      startBlock: 19244955
+      startBlock: 959723
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -25,7 +25,7 @@ dataSources:
 templates:
   - kind: ethereum
     name: StakingPool
-    network: mainnet
+    network: holesky
     source:
       abi: StakingPool
     mapping:
@@ -40,4 +40,6 @@ templates:
       eventHandlers:
         - event: DepositToPool(uint256,address,uint256)
           handler: handleDepositToPool
+        - event: Stake(address,address)
+          handler: handleStake
       file: ./src/staking-pool.ts
